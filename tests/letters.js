@@ -59,13 +59,13 @@ QUnit.module('Тестируем функцию letters', function () {
 	});    
 
 	QUnit.test('Обработывает длинную строку', function (assert) {
-        var teststring = ''
-        for (var i = 0; i < 2048; i++) {
-            teststring += 'q'
-        }
-        assert.strictEqual(letters(teststring), '');
-        assert.strictEqual(letters(teststring, true), 'q');
-        assert.strictEqual(letters(teststring, false), 'q');
+		var teststring = ''
+		for (var i = 0; i < 2048; i++) {
+        	teststring += 'q'
+		}
+		assert.strictEqual(letters(teststring), '');
+		assert.strictEqual(letters(teststring, true), 'q');
+		assert.strictEqual(letters(teststring, false), 'q');
 	});
         
 });
