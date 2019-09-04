@@ -11,7 +11,7 @@ const letters = (str, isFirst) => {
         return arr.filter( symbol => counts[symbol] === 1 ).join('');
     } else if ( isFirst ) {
         return Array.from( new Set(arr) ).join('');
-    } else if ( !isFirst ) {
+    } else {
         return reverse( letters(reverse(str), true) );
     }
 }
