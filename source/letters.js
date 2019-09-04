@@ -1,8 +1,6 @@
 const letters = (str, isFirst) => {
 
-    if ( !str ) {
-        return '';
-    }
+    if ( !str ) return '';
 
     const arr = str.split('');
     
@@ -14,7 +12,7 @@ const letters = (str, isFirst) => {
         return arr.filter( symbol => counts[symbol] === 1 ).join('');
     } else if ( isFirst ) {
         return Array.from( new Set(arr) ).join('');
-    } else if ( !isFirst ){
+    } else if ( !isFirst ) {
         return reverse( letters(reverse(str), true) );
     }
 }
