@@ -1,22 +1,25 @@
-const letters = function (arr, isFirst) {
+let letters = (str, isFirst) => {
 
-    const reverse = function (str){
-        return str.split("").reverse().join("")
-    }
-
-    if (typeof arr == 'undefined') {
+    if ( !str ) {
         return '';
     }
+
+	var arr = str.split('');
     
-    if (typeof isFirst == 'undefined') {
-        const counts = Object.create(null)
-        arr.split('').forEach(symbol => {
-            counts[symbol] = counts[symbol] ? counts[symbol] + 1 : 1
+    if ( typeof isFirst === 'undefined' ) {
+        const counts = {};
+        arr.forEach(symbol => {
+            counts[symbol] = counts[symbol] ? counts[symbol] + 1 : 1;
         })
-        return arr.split('').filter(symbol => counts[symbol] == 1).join('')
-    } else if (isFirst) {
-        return Array.from(new Set(arr.split(''))).join('');
-    } else if (!isFirst){
-        return reverse(letters(reverse(arr), true))
+        return arr.filter( symbol => counts[symbol] === 1 ).join('');
+    } else if ( isFirst ) {
+        return Array.from( new Set(arr) ).join('');
+    } else if ( !isFirst ){
+        return reverse( letters(reverse(str), true) );
     }
-};
+}
+
+let reverse = str => {
+    return str.split('').reverse().join('');
+}
+
