@@ -4,7 +4,7 @@ const letters = (str, isFirst) => {
         return '';
     }
 
-	const arr = str.split('');
+    const arr = str.split('');
     
     if ( typeof isFirst === 'undefined' ) {
         const counts = {};
