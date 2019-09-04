@@ -59,7 +59,7 @@ QUnit.module('Тестируем функцию letters', function () {
 	});    
 
 	QUnit.test('Обработывает длинную строку', function (assert) {
-		let teststring = ''
+		let teststring = '';
 		for (let i = 0; i < 2048; i++) {
         	teststring += 'q';
 		}
