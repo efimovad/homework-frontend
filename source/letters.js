@@ -1,7 +1,6 @@
 const letters = (str, isFirst) => {
 
     if ( !str ) return '';
-
     const arr = str.split('');
     
     if ( typeof isFirst === 'undefined' ) {
