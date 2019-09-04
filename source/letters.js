@@ -1,10 +1,10 @@
-let letters = (str, isFirst) => {
+const letters = (str, isFirst) => {
 
     if ( !str ) {
         return '';
     }
 
-	var arr = str.split('');
+	const arr = str.split('');
     
     if ( typeof isFirst === 'undefined' ) {
         const counts = {};
@@ -19,7 +19,7 @@ let letters = (str, isFirst) => {
     }
 }
 
-let reverse = str => {
+const reverse = str => {
     return str.split('').reverse().join('');
 }
 
