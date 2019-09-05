@@ -56,16 +56,17 @@ QUnit.module('Тестируем функцию letters', function () {
 
 	QUnit.test('Возвращает пустую строку, когда нет входных параметров', function (assert) {
 		assert.strictEqual(letters(), '');
-	});    
+	});
 
 	QUnit.test('Обработывает длинную строку', function (assert) {
-		let teststring = '';
-		for ( let i = 0; i < 2048; i++ ) {
-			teststring += 'q';
+		let testString = '';
+
+		for (let i = 0; i < 2048; i++) {
+			testString += 'q';
 		}
-		assert.strictEqual( letters(teststring), '' );
-		assert.strictEqual( letters(teststring, true), 'q' );
-		assert.strictEqual( letters(teststring, false), 'q' );
+
+		assert.strictEqual(letters(testString), '');
+		assert.strictEqual(letters(testString, true), 'q');
+		assert.strictEqual(letters(testString, false), 'q');
 	});
-        
 });
